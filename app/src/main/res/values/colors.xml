@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    
+    <!--SelectCityActivity-->
+    <color name="gps_blue">#1f8af8</color>
+    <color name="bg_gray">#eeeeee</color>
+    <color name="bg_dark_gray">#e2e2e2</color>
+    <color name="text_gray">#808080</color>
+
+    <drawable name="transparent_background">#d0000000</drawable>
+
+    <color name="alpha_black">#ff000000</color>
+</resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical"
+    tools:context="com.xiaoyu.ttweather.activity.CityManageActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <ImageButton
+            android:id="@+id/ib_back"
+            style="@style/ib_title_back" />
+
+        <TextView
+            android:text="城市管理"
+            android:id="@+id/tv_title"
+            style="@style/tv_title" />
+
+        <ImageButton
+            android:id="@+id/ib_refresh"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:layout_toStartOf="@+id/ib_right"
+            android:layout_toLeftOf="@+id/ib_right"
+            android:background="@android:color/transparent"
+            android:src="@drawable/city_manage_refresh_selector" />
+
+        <ImageButton
+            android:id="@+id/ib_right"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/city_manage_right_setting_selector" />
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/gv_select_city"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:numColumns="3"
+        android:padding="5dp"
+        android:scrollbars="none">
+
+    </GridView>
+</LinearLayout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--空气质量-->
+    <string-array name="aqi_text">
+        <item>优</item>
+        <item>良</item>
+        <item>轻度</item>
+        <item>中度</item>
+        <item>重度</item>
+        <item>严重</item>
+    </string-array>
+    <integer-array name="aqi_icon">
+        <item>@drawable/aqi_icon_1</item>
+        <item>@drawable/aqi_icon_1</item>
+        <item>@drawable/aqi_icon_2</item>
+        <item>@drawable/aqi_icon_3</item>
+        <item>@drawable/aqi_icon_4</item>
+        <item>@drawable/aqi_icon_4</item>
+    </integer-array>
+    <integer-array name="aqi_bg">
+        <item>@drawable/shape_aqi_1</item>
+        <item>@drawable/shape_aqi_2</item>
+        <item>@drawable/shape_aqi_3</item>
+        <item>@drawable/shape_aqi_4</item>
+        <item>@drawable/shape_aqi_5</item>
+        <item>@drawable/shape_aqi_6</item>
+    </integer-array>
+
+    <!--温度数字-->
+    <integer-array name="temp_num_pic">
+        <item>@drawable/hourly_temperature_0</item>
+        <item>@drawable/hourly_temperature_1</item>
+        <item>@drawable/hourly_temperature_2</item>
+        <item>@drawable/hourly_temperature_3</item>
+        <item>@drawable/hourly_temperature_4</item>
+        <item>@drawable/hourly_temperature_5</item>
+        <item>@drawable/hourly_temperature_6</item>
+        <item>@drawable/hourly_temperature_7</item>
+        <item>@drawable/hourly_temperature_8</item>
+        <item>@drawable/hourly_temperature_9</item>
+    </integer-array>
+
+    <!--天气图片-->
+    <integer-array name="weather_pic">
+        <item>@drawable/forecast_100_sunny</item>
+        <item>@drawable/forecast_100_sunny_night</item>
+        <item>@drawable/forecast_101_103_cloud</item>
+        <item>@drawable/forecast_101_103_cloud_night</item>
+        <item>@drawable/forecast_104_overcast</item>
+        <item>@drawable/forecast_300_301_shower</item>
+        <item>@drawable/forecast_302_303_thundershower</item>
+        <item>@drawable/forecast_304_hail</item>
+        <item>@drawable/forecast_305_306_309_rain</item>
+        <item>@drawable/forecast_307_308_310_312_heavyrain</item>
+        <item>@drawable/forecast_400_401_407_snow</item>
+        <item>@drawable/forecast_402_403_heavysnow</item>
+        <item>@drawable/forecast_404_406_sleet</item>
+        <item>@drawable/forecast_500_501_fog</item>
+        <item>@drawable/forecast_502_haze</item>
+        <item>@drawable/forecast_503_508_sandstorm</item>
+    </integer-array>
+
+    <!--天气指数图片-->
+    <integer-array name="suggestion_pic">
+        <item>@drawable/life_1</item>
+        <item>@drawable/life_2</item>
+        <item>@drawable/life_3</item>
+        <item>@drawable/life_4</item>
+        <item>@drawable/life_5</item>
+        <item>@drawable/life_6</item>
+        <item>@drawable/life_7</item>
+        <item>@drawable/life_8</item>
+        <item>@drawable/life_9</item>
+    </integer-array>
+
+    <!--主页面背景图片-->
+    <integer-array name="main_bg">
+        <item>@drawable/bg_main6</item>
+        <item>@drawable/bg_main7</item>
+        <item>@drawable/bg_main8</item>
+        <item>@drawable/bg_main9</item>
+        <item>@drawable/bg_main11</item>
+        <item>@drawable/bg_main6</item>
+        <item>@drawable/bg_main7</item>
+        <item>@drawable/bg_main8</item>
+        <item>@drawable/bg_main9</item>
+        <item>@drawable/bg_main11</item>
+    </integer-array>
+</resources>

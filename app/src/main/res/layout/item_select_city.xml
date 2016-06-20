@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="177dp"
+    android:background="#eeeeee">
+
+    <LinearLayout
+        android:id="@+id/ll_select_city_main"
+        android:layout_width="match_parent"
+        android:layout_height="177dp"
+        android:layout_margin="5dp"
+        android:background="@android:color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:gravity="center">
+            <ImageView
+                android:layout_marginEnd="2dp"
+                android:visibility="visible"
+                android:id="@+id/iv_locate"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/settings_icon_locate"/>
+            <TextView
+                android:id="@+id/tv_city_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="抚顺"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/bg_dark_gray" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="15dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/forecast_100_sunny" />
+
+            <TextView
+                android:id="@+id/tv_high_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/iv_icon"
+                android:layout_toEndOf="@id/iv_icon"
+                android:text="31°"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/tv_low_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/iv_icon"
+                android:layout_toEndOf="@id/iv_icon"
+                android:text="15°"
+                android:textSize="11sp" />
+
+            <TextView
+                android:lines="1"
+                android:id="@+id/tv_cond"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:text="雷阵雨" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_set_warn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/bg_dark_gray" />
+
+            <TextView
+                android:id="@+id/tv_warn_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="设置为提醒城市"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_delete"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/select_city_delete_selector"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:visibility="visible"
+        android:id="@+id/iv_select_city_add"
+        android:layout_width="match_parent"
+        android:layout_height="183dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginEnd="5dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/select_city_add_selector"/>
+
+</FrameLayout>

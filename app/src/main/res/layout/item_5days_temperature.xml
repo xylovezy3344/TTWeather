@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#3f000000">
+
+
+    <LinearLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tv_5days_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:text="今天"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tv_5days_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="6/6"
+            android:textColor="@android:color/white"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="280dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:paddingBottom="20dp"
+        android:paddingRight="10dp"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp">
+
+        <LinearLayout
+            android:id="@+id/ll_high"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_5days_high_temp"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/forecast_icon_sunnny" />
+
+            <TextView
+                android:id="@+id/tv_5days_high_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_marginTop="5dp"
+                android:text="31°"
+                android:textColor="@android:color/white"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/iv_5days_high_dot"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_below="@+id/ll_high"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/curve_trendchart_icon_dot_yesterday" />
+
+        <ImageView
+            android:id="@+id/iv_5days_low_dot"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_below="@+id/iv_5days_high_dot"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/curve_trendchart_icon_dot_yesterday" />
+
+        <LinearLayout
+            android:id="@+id/ll_low"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_5days_low_dot"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_5days_low_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:text="18°"
+                android:textColor="@android:color/white"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/iv_5days_low_temp"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/forecast_icon_night" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_5days_wind_direction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:text="微风飞"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_5days_wind_power"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="3-4级"
+                android:textColor="@android:color/white"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>
+
+
