@@ -291,7 +291,9 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
                     "has_run_guide", false)) {
                 startActivity(new Intent(SelectCityActivity.this, MainActivity.class));
             } else {
-                startActivity(new Intent(SelectCityActivity.this, GuideActivity.class));
+                //取消GuideActivity
+                //startActivity(new Intent(SelectCityActivity.this, GuideActivity.class));
+                startActivity(new Intent(SelectCityActivity.this, MainActivity.class));
             }
         }
         finish();

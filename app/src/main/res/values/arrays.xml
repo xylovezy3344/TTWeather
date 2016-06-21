@@ -75,15 +75,6 @@
 
     <!--主页面背景图片-->
     <integer-array name="main_bg">
-        <item>@drawable/bg_main6</item>
-        <item>@drawable/bg_main7</item>
         <item>@drawable/bg_main8</item>
-        <item>@drawable/bg_main9</item>
-        <item>@drawable/bg_main11</item>
-        <item>@drawable/bg_main6</item>
-        <item>@drawable/bg_main7</item>
-        <item>@drawable/bg_main8</item>
-        <item>@drawable/bg_main9</item>
-        <item>@drawable/bg_main11</item>
     </integer-array>
 </resources>

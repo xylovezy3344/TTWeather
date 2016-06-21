@@ -28,7 +28,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="6/6"
             android:textColor="@android:color/white"
             android:textSize="11sp" />
 
@@ -59,15 +58,13 @@
             <ImageView
                 android:id="@+id/iv_5days_high_temp"
                 android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:src="@drawable/forecast_icon_sunnny" />
+                android:layout_height="22dp" />
 
             <TextView
                 android:id="@+id/tv_5days_high_temp"
                 android:layout_width="wrap_content"
                 android:layout_height="18dp"
                 android:layout_marginTop="5dp"
-                android:text="31°"
                 android:textColor="@android:color/white"
                 android:textSize="13sp" />
 
@@ -104,7 +101,6 @@
                 android:id="@+id/tv_5days_low_temp"
                 android:layout_width="wrap_content"
                 android:layout_height="18dp"
-                android:text="18°"
                 android:textColor="@android:color/white"
                 android:textSize="13sp" />
 
@@ -112,15 +108,14 @@
                 android:id="@+id/iv_5days_low_temp"
                 android:layout_width="22dp"
                 android:layout_height="22dp"
-                android:layout_marginTop="5dp"
-                android:src="@drawable/forecast_icon_night" />
+                android:layout_marginTop="5dp"/>
         </LinearLayout>
 
         <LinearLayout
+            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
@@ -128,9 +123,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:lines="1"
-                android:text="微风飞"
                 android:textColor="@android:color/white"
-                android:textSize="12sp" />
+                android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_5days_wind_power"
@@ -138,8 +132,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="3-4级"
+                android:lines="1"
                 android:textColor="@android:color/white"
-                android:textSize="11sp" />
+                android:textSize="9sp" />
         </LinearLayout>
 
     </RelativeLayout>
