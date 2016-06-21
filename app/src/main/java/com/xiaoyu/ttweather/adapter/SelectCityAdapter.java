@@ -5,7 +5,10 @@ import android.graphics.Color;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.BaseAdapter;
+import android.widget.FrameLayout;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -29,11 +32,13 @@ public class SelectCityAdapter extends BaseAdapter {
     private boolean mIsSetting;
     private String warnCity;
     private String localCity;
+    private int mHeight;
 
-    public SelectCityAdapter(Context context, List<SelectCity> selectCityList) {
+    public SelectCityAdapter(Context context, List<SelectCity> selectCityList, int mGridViewHeight) {
         mContext = context;
         mSelectCityList = selectCityList;
         mIsSetting = true;
+        mHeight = mGridViewHeight;
     }
 
     @Override
@@ -62,6 +67,10 @@ public class SelectCityAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = View.inflate(mContext, R.layout.item_select_city, null);
             holder = new ViewHolder();
+
+            AbsListView.LayoutParams params = new AbsListView.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT, mHeight / 3);
+            convertView.setLayoutParams(params);
 
             holder.llMain = (LinearLayout) convertView.findViewById(R.id.ll_select_city_main);
             holder.ivAdd = (ImageView) convertView.findViewById(R.id.iv_select_city_add);

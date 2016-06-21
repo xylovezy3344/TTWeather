@@ -21,17 +21,18 @@
     <!--Title ImageButton-->
     <style name="ib_title_back">
         <item name="android:background">@android:color/transparent</item>
-        <item name="android:layout_margin">@dimen/icon_margin</item>
-        <item name="android:layout_width">@dimen/icon_width</item>
-        <item name="android:layout_height">@dimen/icon_height</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:layout_width">22dp</item>
+        <item name="android:layout_height">22dp</item>
         <item name="android:src">@drawable/gray_back</item>
+        <item name="android:layout_centerVertical">true</item>
     </style>
     <!--Title TextView-->
     <style name="tv_title">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_centerInParent">true</item>
-        <item name="android:textSize">@dimen/title_text_size</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:textColor">@android:color/black</item>
     </style>
     <!--Hot_Cities TextView-->

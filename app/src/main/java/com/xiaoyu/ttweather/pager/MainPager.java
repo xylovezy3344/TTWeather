@@ -48,6 +48,7 @@ public class MainPager {
     private Activity mActivity;
     public View mRootView;
     private String mCityName;
+    private int mMainTitleHeight;
     private MyDragLayout mDlContent;
     private MainListView mLvMain;
     private ScrollView mSvBottom;
@@ -61,9 +62,15 @@ public class MainPager {
     private DescInfo suggestion;
     private List<String> mDescDetailList;
 
-    public MainPager(Activity activity, String cityName) {
+    /**
+     * @param activity
+     * @param cityName
+     * @param measuredHeight    主界面标题栏高度
+     */
+    public MainPager(Activity activity, String cityName, int measuredHeight) {
         mActivity = activity;
         mCityName = cityName;
+        mMainTitleHeight = measuredHeight;
         initView();
     }
 
@@ -182,7 +189,8 @@ public class MainPager {
         //生活指数
         suggestion = dataFromJson.HeWeatherDataList.get(0).suggestion;
 
-        MainListAdapter mMainAdapter = new MainListAdapter(mActivity, mCityName, dataFromJson.HeWeatherDataList.get(0));
+        MainListAdapter mMainAdapter = new MainListAdapter(mActivity, mCityName,
+                dataFromJson.HeWeatherDataList.get(0), mMainTitleHeight);
         mLvMain.setAdapter(mMainAdapter);
 
         FiveDaysWeatherAdapter dailyWeatherAdapter = new FiveDaysWeatherAdapter(mActivity, daily_forecast);

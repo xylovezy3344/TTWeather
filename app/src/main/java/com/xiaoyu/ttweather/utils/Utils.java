@@ -43,18 +43,18 @@ public class Utils {
         return (int) (pxValue / scale + 0.5f);
     }
 
-    /** 获取状态栏高度
-     * @param v
-     * @return
-     */
-    public static int getStatusBarHeight(View v) {
-        if (v == null) {
-            return 0;
-        }
-        Rect frame = new Rect();
-        v.getWindowVisibleDisplayFrame(frame);
-        return frame.top;
-    }
+//    /** 获取状态栏高度
+//     * @param v
+//     * @return
+//     */
+//    public static int getStatusBarHeight(View v) {
+//        if (v == null) {
+//            return 0;
+//        }
+//        Rect frame = new Rect();
+//        v.getWindowVisibleDisplayFrame(frame);
+//        return frame.top;
+//    }
 
     public static String getActionName(MotionEvent event) {
         String action = "unknow";
@@ -110,5 +110,18 @@ public class Utils {
         outP.x = outRect.width() ;
         outP.y = outRect.height();
         return outP;
+    }
+
+    /** 获取状态栏高度
+     * @param context
+     * @return
+     */
+    public static int getStatusBarHeight(Context context) {
+        int result = 0;
+        int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = context.getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
     }
 }

@@ -15,6 +15,7 @@ import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.viewpagerindicator.CirclePageIndicator;
@@ -32,6 +33,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     public LinearLayout llApp;
+    private RelativeLayout mRlTitle;
     private MainViewPager mVpMain;
     private TextView mTvTitle;
     private List<MainPager> pagerList;
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private LinePageIndicator mIndicator;
     private ImageButton mIbMarket;
     private ImageButton mIbMenu;
+
 
 
     @Override
@@ -52,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initView() {
         llApp = (LinearLayout) findViewById(R.id.ll_app);
+        mRlTitle = (RelativeLayout) findViewById(R.id.rl_title);
         mVpMain = (MainViewPager) findViewById(R.id.vp_main);
         mIndicator = (LinePageIndicator)findViewById(R.id.indicator);
 
@@ -64,6 +68,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initData() {
 
+        int statusBarHeight = Utils.getStatusBarHeight(this);
+
+        mRlTitle.measure(0, 0);
+        int measuredHeight = mRlTitle.getMeasuredHeight();
+
+
         String selectCities = SharedPrefUtils.getString(this, "select_cities", "");
         cityNames = selectCities.split(",");
 
@@ -74,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         pagerList = new ArrayList<>();
         for (String cityName : cityNames) {
-            pagerList.add(new MainPager(this, cityName));
+            pagerList.add(new MainPager(this, cityName, measuredHeight));
         }
 
         MainPagerAdapter mMainPagerAdapter = new MainPagerAdapter();

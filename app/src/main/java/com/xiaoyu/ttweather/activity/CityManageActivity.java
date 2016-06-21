@@ -2,6 +2,7 @@ package com.xiaoyu.ttweather.activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -57,6 +59,8 @@ public class CityManageActivity extends AppCompatActivity implements View.OnClic
 
     private int parseTime;
     private int serverTime;
+    private RelativeLayout mRlTitle;
+    private int mGridViewHeight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +72,7 @@ public class CityManageActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void initView() {
+        mRlTitle = (RelativeLayout) findViewById(R.id.rl_title);
         mIbBack = (ImageButton) findViewById(R.id.ib_back);
         mIbRight = (ImageButton) findViewById(R.id.ib_right);
         mIbRefresh = (ImageButton) findViewById(R.id.ib_refresh);
@@ -82,6 +87,17 @@ public class CityManageActivity extends AppCompatActivity implements View.OnClic
         mIbBack.setOnClickListener(this);
         mIbRefresh.setOnClickListener(this);
         mIbRight.setOnClickListener(this);
+
+        //屏幕尺寸
+        Point windowSize = new Point();
+        getWindowManager().getDefaultDisplay().getSize(windowSize);
+        //标题栏高度
+        mRlTitle.measure(0, 0);
+        int titleHeight = mRlTitle.getMeasuredHeight();
+        //状态栏高度
+        int statusBarHeight = Utils.getStatusBarHeight(this);
+        //mGvSelectCity的总高度 pading值还有10
+        mGridViewHeight = windowSize.y - titleHeight - statusBarHeight - Utils.dip2px(this, 10);
 
         //城市数据集合
         selectCityList = new ArrayList<>();
@@ -188,7 +204,7 @@ public class CityManageActivity extends AppCompatActivity implements View.OnClic
         }
 
         if (parseTime == cityNames.length) {
-            adapter = new SelectCityAdapter(this, selectCityList);
+            adapter = new SelectCityAdapter(this, selectCityList, mGridViewHeight);
             mGvSelectCity.setAdapter(adapter);
             if (dialog != null && dialog.isShowing()) {
                 dialog.dismiss();

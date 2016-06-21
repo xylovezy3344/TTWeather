@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.graphics.Point;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -25,6 +27,7 @@ import com.xiaoyu.ttweather.model.DailyWeather;
 import com.xiaoyu.ttweather.model.NowWeather;
 import com.xiaoyu.ttweather.model.WeatherDataFromJson;
 import com.xiaoyu.ttweather.utils.DateUtils;
+import com.xiaoyu.ttweather.utils.Utils;
 import com.xiaoyu.ttweather.utils.WeatherDataUtils;
 
 import java.util.List;
@@ -39,6 +42,7 @@ public class MainListAdapter extends BaseAdapter implements View.OnClickListener
     private Activity mContext;
     private WeatherDataFromJson.WeatherData mWeatherData;
     private String mCityName;
+    private int mMainTitleHeight;
 
     //信息显示区
     private LinearLayout mLlTemp;
@@ -74,12 +78,18 @@ public class MainListAdapter extends BaseAdapter implements View.OnClickListener
     private String[] aqiTexts;
     private int[] aqiBgs;
     private int aqiPosition;
+    private final Point mWindowSize;
 
 
-    public MainListAdapter(Activity context, String cityName, WeatherDataFromJson.WeatherData weatherData) {
+    public MainListAdapter(Activity context, String cityName,
+                           WeatherDataFromJson.WeatherData weatherData, int mMainTitleHeight) {
         mContext = context;
         mCityName = cityName;
         mWeatherData = weatherData;
+        this.mMainTitleHeight = mMainTitleHeight;
+        MainActivity mainUi = (MainActivity) mContext;
+        mWindowSize = new Point();
+        mainUi.getWindowManager().getDefaultDisplay().getSize(mWindowSize);
     }
 
     @Override
@@ -100,7 +110,17 @@ public class MainListAdapter extends BaseAdapter implements View.OnClickListener
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        View view = View.inflate(mContext, R.layout.item_main_list, null);
+        LinearLayout view = (LinearLayout) View.inflate(mContext, R.layout.item_main_list, null);
+
+        View fillView = new View(mContext);
+        //填充view的高度 = 屏幕高 - view高300dp - 标题栏高 - 状态栏高
+        int fillViewHeight = mWindowSize.y - Utils.dip2px(mContext, 300) - mMainTitleHeight
+                - Utils.getStatusBarHeight(mContext);
+        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, fillViewHeight);
+        fillView.setLayoutParams(params);
+
+        view.addView(fillView, 0);
 
         initView(view);
         initData();
