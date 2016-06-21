@@ -1,28 +1,22 @@
 package com.xiaoyu.ttweather.activity;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.PopupMenu;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.viewpagerindicator.CirclePageIndicator;
 import com.viewpagerindicator.LinePageIndicator;
 import com.xiaoyu.ttweather.R;
 import com.xiaoyu.ttweather.pager.MainPager;
-import com.xiaoyu.ttweather.service.AutoUpdateService;
 import com.xiaoyu.ttweather.utils.SharedPrefUtils;
 import com.xiaoyu.ttweather.utils.Utils;
 import com.xiaoyu.ttweather.view.MainViewPager;
@@ -89,11 +83,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         MainPagerAdapter mMainPagerAdapter = new MainPagerAdapter();
         mVpMain.setAdapter(mMainPagerAdapter);
-
-        //默认展示选择城市
-//        mVpMain.setCurrentItem(0);
-//        pagerList.get(0).initData();
-//        mVpMain.setDragLayout(pagerList.get(0).getmDlContent());
 
         mIndicator.setViewPager(mVpMain);
         mIndicator.setCurrentItem(0);

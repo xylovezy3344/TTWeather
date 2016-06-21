@@ -84,7 +84,7 @@ public class AutoUpdateService extends Service {
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-                Log.e("SplashActivity:", ex + "");
+                Log.e("AutoUpdateService:", ex + "");
                 Log.e("tag", "网络异常");
             }
 
