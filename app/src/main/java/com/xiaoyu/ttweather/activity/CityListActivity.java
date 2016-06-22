@@ -26,7 +26,6 @@ public class CityListActivity extends AppCompatActivity implements View.OnClickL
     private ImageButton mIbBack;
     private RelativeLayout mRlSearch;
     private ListView mLvCity;
-    private List<CityModel> citylList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +49,7 @@ public class CityListActivity extends AppCompatActivity implements View.OnClickL
         mIbBack.setOnClickListener(this);
         mRlSearch.setOnClickListener(this);
 
-        citylList = WeatherDB.getInstance(this).getCities(province);
+        List<CityModel> citylList = WeatherDB.getInstance(this).getCities(province);
         final List<String> cityNameList = new ArrayList<>();
         for (CityModel city : citylList) {
             if (city.id.endsWith("01") || city.id.endsWith("00")) {
@@ -69,7 +68,6 @@ public class CityListActivity extends AppCompatActivity implements View.OnClickL
                     Toast.makeText(CityListActivity.this, "该城市已经添加！", Toast.LENGTH_SHORT).show();
                 } else {
                     SharedPrefUtils.putSelectCity(CityListActivity.this, cityNameList.get(position), false);
-                    //SharedPrefUtils.putString(CityListActivity.this, "checked_city", cityNameList.get(position));
                     Intent intent = new Intent();
                     intent.setClass(CityListActivity.this, CityManageActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
